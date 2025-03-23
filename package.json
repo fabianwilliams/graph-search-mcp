@@ -1,0 +1,56 @@
+{
+  "name": "@fabianwilliams/graph-search-mcp",
+  "version": "0.0.1",
+  "description": "MCP tool to search for files in Microsoft 365 via Microsoft Graph API",
+  "keywords": [
+    "mcp",
+    "msgraph",
+    "microsoft",
+    "graph",
+    "microsoft-graph",
+    "typescript"
+  ],
+  "homepage": "https://github.com/fabianwilliams/graph-search-mcp",
+  "bugs": {
+    "url": "https://github.com/fabianwilliams/graph-search-mcp/issues"
+  },
+  "author": "Fabian G. Williams <fabian@adotob.com> (https://go.fabswill.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabianwilliams/graph-search-mcp.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "build/main.js",
+  "files": [
+    "build"
+  ],
+  "bin": {
+    "graph-search": "build/main.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "postbuild": "chmod +x build/main.js",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "test": "vitest run",
+    "ci": "npm run build && npm run check-format",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci",
+    "clean": "rm -rf build dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@azure/msal-node": "^2.16.2",
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.4",
+    "@changesets/cli": "^2.28.1",
+    "@types/node": "^22.13.11",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  }
+}

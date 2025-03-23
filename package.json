@@ -1,6 +1,6 @@
 {
   "name": "@fabianwilliams/graph-search-mcp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "MCP tool to search for files in Microsoft 365 via Microsoft Graph API",
   "author": "Fabian G. Williams <fabian@adotob.com>",
   "license": "MIT",

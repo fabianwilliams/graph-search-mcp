@@ -1,5 +1,11 @@
 # @fabianwilliams/graph-search-mcp
 
+## 0.1.2
+
+### Patch Changes
+
+- eaa24d3: Removign Emojis in Messages as throwing errors
+
 ## 0.1.1
 
 ### Patch Changes

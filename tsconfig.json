@@ -6,18 +6,12 @@
     "lib": ["ES2022", "DOM"],
     "outDir": "./build",
     "rootDir": "./src",
-    "moduleDetection": "force",
-    "esModuleInterop": true,
-    "allowJs": true,
-    "resolveJsonModule": true,
-
     "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": false,
     "sourceMap": true,
     "composite": true,
     "noEmit": false,
-
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
@@ -29,9 +23,11 @@
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
     "forceConsistentCasingInFileNames": true,
-
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true
+    "skipDefaultLibCheck": true,
+    "esModuleInterop": true,
+    "moduleDetection": "force",
+    "resolveJsonModule": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "build", "**/*.test.ts"]

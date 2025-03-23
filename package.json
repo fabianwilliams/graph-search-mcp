@@ -2,38 +2,25 @@
   "name": "@fabianwilliams/graph-search-mcp",
   "version": "0.0.1",
   "description": "MCP tool to search for files in Microsoft 365 via Microsoft Graph API",
-  "keywords": [
-    "mcp",
-    "msgraph",
-    "microsoft",
-    "graph",
-    "microsoft-graph",
-    "typescript"
-  ],
-  "homepage": "https://github.com/fabianwilliams/graph-search-mcp",
-  "bugs": {
-    "url": "https://github.com/fabianwilliams/graph-search-mcp/issues"
-  },
-  "author": "Fabian G. Williams <fabian@adotob.com> (https://go.fabswill.com)",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fabianwilliams/graph-search-mcp.git"
-  },
+  "author": "Fabian G. Williams <fabian@adotob.com>",
   "license": "MIT",
-  "type": "module",
   "main": "build/main.js",
+  "type": "module",
+  "bin": {
+    "graph-search": "build/main.js"
+  },
   "files": [
     "build"
   ],
-  "bin": {
-    "graph-search": "build/main.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabianwilliams/graph-search-mcp.git"
   },
   "scripts": {
     "build": "tsc",
     "postbuild": "chmod +x build/main.js",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
-    "test": "vitest run",
     "ci": "npm run build && npm run check-format",
     "local-release": "changeset version && changeset publish",
     "prepublishOnly": "npm run ci",

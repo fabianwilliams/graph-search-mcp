@@ -29,9 +29,10 @@ async function getDefaultUserId(token: string): Promise<string> {
   const user = json.value?.[0];
   if (!user?.id) throw new Error('No users found in tenant.');
 
-  console.log(
-    `🧠 Defaulting to user: ${user.displayName} (${user.userPrincipalName})`,
+  console.warn(
+    `[DEBUG] Defaulting to user: ${user.displayName} (${user.userPrincipalName})`,
   );
+
   return user.id;
 }
 

@@ -1,5 +1,11 @@
 # @fabianwilliams/graph-search-mcp
 
+## 0.1.1
+
+### Patch Changes
+
+- c0cbac2: This fix remedy a console log that threw a json error in MCP
+
 ## 0.1.0
 
 ### Minor Changes

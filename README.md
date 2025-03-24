@@ -1,8 +1,8 @@
 # 🔍 Search Microsoft 365 Files with Model Context Protocol (MCP) + Microsoft Graph
 
-Ever wanted to ask an AI assistant like Claude or ChatGPT to search your OneDrive or Microsoft 365 files — _and actually get a real, accurate result_? This project shows you exactly how to do that using **Model Context Protocol (MCP)**, **Microsoft Graph**, and a set of handy utilities and plugins you can run locally or publish to npm.
+Ever wanted to ask an AI assistant like Claude or ChatGPT to search your OneDrive or Microsoft 365 files — and actually get a real, accurate result? This project shows you exactly how to do that using **Model Context Protocol (MCP)**, **Microsoft Graph**, and a set of handy utilities and plugins you can run locally or publish to npm.
 
-> 🧠 **No deep coding knowledge required** — we break it down step by step.
+> 🧠 No deep coding knowledge required — we break it down step by step.
 
 ---
 
@@ -31,21 +31,56 @@ This project includes:
 
 Need to filter files in Graph by date? This tool converts a human-friendly date into the ISO 8601 string Microsoft Graph expects.
 
-### Prompt inside Claude:
+### Prompt inside Claude
 
-> I want to convert today’s date Sunday 23rd March 2025 to a date I can use in Graph
+```text
+I want to convert today’s date Sunday 23rd March 2025 to a date I can use in Graph
+```
 
-Claude uses the **`toGraphTime`** tool from your local MCP server:
+Claude uses the `toGraphTime` tool from your local MCP server.
 
 ![Claude Result Using Graph Time Tool](./assets/fabsUtilInClaudeWorking.jpg)
 
-Result:
+**Result:**
 
 ```json
 2025-03-23T00:00:00.000Z
 ```
 
 🧠 This string is now ready to use in your Microsoft Graph API calls!
+
+---
+
+## 📁 Use Case: Search for Word Documents in OneDrive
+
+The `Fabs-Graph-Search` tool allows Claude to find `.docx` files in OneDrive using Microsoft Graph.
+
+In Claude, we enabled the search tool from the MCP Developer settings:
+
+![Search Tool Running in Claude](./assets/fabs_ToolViewwithAdvance.jpg)
+
+Then we ran this prompt:
+
+```text
+Give me a list of all the Word docs I have
+```
+
+Claude executed the MCP plugin and returned results from Microsoft Graph:
+
+![Search Results from MCP Tool](./assets/fabsSearchToolResultsInClaude.jpg)
+
+We confirmed the results matched what's in Adele Vance’s OneDrive:
+
+![Adele Vance OneDrive Screenshot](./assets/fabsAdeleVanceOneDrive.jpg)
+
+Claude responded:
+
+> I found these Word documents in your Microsoft 365 storage:
+>
+> 1. CraftingACompellingProductVisionbyEbiAtawodi.docx
+> 2. ProjectRoundtreeStatusReport.docx
+> 3. Semantic Kernel and AutoGen Script.docx
+> 4. StoryBoard-FabianOnJohnMaedaCozyKitchen-Draft.docx
 
 ---
 
@@ -72,7 +107,7 @@ server.tool(buildGraphUrl, fromGraphTime, toGraphTime);
 
 ## 🚦 Approving Tools in Claude
 
-When Claude detects your MCP tool, it prompts you to allow it:
+When Claude detects your MCP tool, it prompts you to allow it.
 
 ![Tool Permission Prompt](./assets/usingFabsGraphUtilInClaudeConfirmAction.jpg)
 
@@ -87,6 +122,7 @@ When Claude detects your MCP tool, it prompts you to allow it:
 | `buildGraphUrl`        | Constructs a Microsoft Graph API URL from parts         |
 | `fromGraphTime`        | Converts Graph ISO date → JavaScript Date               |
 | `toGraphTime`          | Converts JavaScript Date → Graph ISO format             |
+| `searchDriveItems`     | Queries files in OneDrive using Graph search endpoint   |
 | `lokka-MicrosoftGraph` | Full-featured Graph search plugin (inspired by @merill) |
 
 ---
@@ -119,18 +155,10 @@ When Claude detects your MCP tool, it prompts you to allow it:
 
 ## 🧠 Bonus: Learn More
 
-- 🧑‍🏫 What is MCP? [ModelContextProtocol.dev](https://modelcontextprotocol.dev)
-- 📚 Microsoft Graph API: [docs.microsoft.com](https://learn.microsoft.com/en-us/graph/overview)
+- 🧑‍🏫 [What is MCP?](https://modelcontextprotocol.dev)
+- 📚 [Microsoft Graph API Docs](https://learn.microsoft.com/en-us/graph/overview)
 
 ---
-
-## 📸 Image Credits
-
-All screenshots are captured from:
-
-- Fabian's Claude web app
-- Fabian's Local development terminal
-- Fabian's Visual Studio Code
 
 ## 💬 Feedback?
 

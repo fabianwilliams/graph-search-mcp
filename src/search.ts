@@ -82,7 +82,7 @@ export const searchTool = {
 
     if (!files) {
       console.warn(
-        `🔁 Falling back to drive/root/children listing for user: ${userId}`,
+        `Falling back to drive/root/children listing for user: ${userId}`,
       );
       files = await searchViaFallback(token, userId, query);
       usedFallback = true;

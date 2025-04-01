@@ -1,3 +1,11 @@
+# ❗️🚨 **PLEASE USE THIS ONLY IN A DEVELOPER ENVIRONMENT — NOT FOR PRODUCTION** 🚨❗️
+
+> ⚠️ **This implementation uses `App-Only Authentication` with a `Client Secret`, which is *not recommended* for production environments.**  
+> It is intended ***solely*** for local development and testing purposes.   
+> For more information, see the [Microsoft identity platform security guidance](https://learn.microsoft.com/en-us/entra/identity-platform/secure-least-privileged-access).
+
+---
+
 # 🔍 Search Microsoft 365 Files with Model Context Protocol (MCP) + Microsoft Graph
 
 Ever wanted to ask an AI assistant like Claude or ChatGPT to search your OneDrive or Microsoft 365 files — and actually get a real, accurate result? This project shows you exactly how to do that using **Model Context Protocol (MCP)**, **Microsoft Graph**, and a set of handy utilities and plugins you can run locally or publish to npm.
